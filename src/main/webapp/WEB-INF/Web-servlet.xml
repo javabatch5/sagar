@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:component-scan base-package="com.framework" />
+<bean id="stdJdbcDao" class="com.facebook.jdbcdaos.Jdbcdao"></bean>
+<!-- 	<bean id="stdHiberDao" class="com.facebook.daos.Hiberdao" ></bean> -->
+	<bean id="pojos" class="com.pojos.Employee" scope="prototype"></bean>
+	<bean id="ser" class="com.facebook.service.Service"></bean>
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+</beans>
